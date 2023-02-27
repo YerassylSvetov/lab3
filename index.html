@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Business Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Button Example</title>
+    <script>
+         let persons = [
+                {
+                    "fullname": "Vladimir Kim",
+                    "zarplata": 5000000000,
+                    "age": 61
+                },
+                {
+                    "fullname": "Timur Kulibayev",
+                    "zarplata": 3900000000,
+                    "age": 55
+                },
+                {
+                    "fullname": "Dinara Kulibayeva",
+                    "zarplata": 3900000000,
+                    "age": 54
+                },
+                {
+                    "fullname": "Vyacheslav Kim",
+                    "zarplata": 3200000000,
+                    "age": 52
+                },
+                {
+                    "fullname": "Mikhail Lomtadze",
+                    "zarplata": 3000000000,
+                    "age": 46
+                }
+                
+            ]
+        function displayResults() {
+      
+      var table = "<table>";
+  table += "<tr><th>Number</th><th>Name</th><th>Wealth</th><th>Age</th></tr>";
+
+  for (let i = 0; i < persons.length; i++) {
+    table += `<tr><td>${i+1}</td><td>${persons[i].fullname}</td><td>${persons[i].zarplata}</td><td>${persons[i].age}</td></tr>`;
+  }
+  var all = 0;
+  var number = 0;
+  
+  for (let i = 0; i < persons.length; i++) {
+    all += persons[i].zarplata
+    number = persons.length;
+  }
+  var average = all/number + "$   Average Wealth";
+  console.log(average);
+
+  table += "</table>";
+  document.getElementById("output").innerHTML = table;
+  document.getElementById("avg").innerHTML = average;
+       
+        }
+    function closeResults() {
+        // Clear the output
+        document.getElementById("output").innerHTML = "";
+
+        // Hide the close button
+        document.getElementById("close-button").style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a id = "main-page" href="site.html">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="forbes.html">Forbes</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <body>
+      <div class="mainbody">
+        <button id ="button" onclick="displayResults()">Show top 5 rischest people in KZ</button>
+        <div id="output"></div>
+        <div id="avg">Average Wealth</div>
+        <button id="button" onclick="closeResults()">Close Results</button>
+        <div id="output"></div>
+        <div id="avg">Average Wealth</div>
+        
+      </div>
+      <footer>
+        <p>Copyright & IITU 2023</p>
+      </footer>
+    </body>
+    
+  </body>
+</html>
